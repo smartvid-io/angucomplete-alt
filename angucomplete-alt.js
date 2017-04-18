@@ -50,7 +50,7 @@
         '  <div id="{{id}}_dropdown" class="angucomplete-dropdown" ng-show="showDropdown">' +
         '    <div class="angucomplete-searching" ng-show="searching" ng-bind="textSearching"></div>' +
         '    <div class="angucomplete-searching" ng-show="!searching && (!results || results.length == 0)" ng-bind="textNoResults"></div>' +
-        '    <div text-tooltip="{{ extractTitle(result.originalObject)}}" text-tooltip-show-arrow="false" text-tooltip-position="{{textTooltipPosition}}" text-tooltip="{{ result.title }}" text-tooltip-show-arrow="false" class="angucomplete-row" ng-repeat="result in results" ng-click="selectResult(result)" ng-mouseenter="hoverRow($index)" ng-class="{\'angucomplete-selected-row\': $index == currentIndex}">' +
+        '    <div text-tooltip="{{ !!textTooltipPosition ? extractTitle(result.originalObject) : undefined }}" text-tooltip-show-arrow="false" text-tooltip-position="{{textTooltipPosition}}" text-tooltip="{{ result.title }}" text-tooltip-show-arrow="false" class="angucomplete-row" ng-repeat="result in results" ng-click="selectResult(result)" ng-mouseenter="hoverRow($index)" ng-class="{\'angucomplete-selected-row\': $index == currentIndex}">' +
         '      <div ng-if="imageField" class="angucomplete-image-holder">' +
         '        <img ng-if="result.image && result.image != \'\'" ng-src="{{result.image}}" class="angucomplete-image"/>' +
         '        <div ng-if="!result.image && result.image != \'\'" class="angucomplete-image-default"></div>' +
